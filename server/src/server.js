@@ -13,10 +13,10 @@ server.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, DELETE');next();});
 
 server.use(morgan("dev"));
-server.use(express.json());   
+server.use(express.json());   //funcion de parseo
 server.use(cors());
 server.use("/countries", router);
-server.use(router);  //CONFIGURAMOS NUESTRO ROUTER PRINCIPAL.  Ppunto de entrada al localhost => /routes/index  
+server.use(router);  //CONFIGURAMOS NUESTRO ROUTER PRINCIPAL.  punto de entrada al localhost => /routes/index  
 
 module.exports = server;
 

@@ -2,14 +2,30 @@ const axios = require("axios");
 const server = require("./src/server");
 const PORT = 3001;
 const { sequelize } = require ("./src/db.js");
+const { Country } = require("./src/models/Country");
+const fetchAndSaveCountries = require('./src/importData'); // Importa la función para obtener y guardar los países
 
 
 server.listen(PORT, async () => {
   await sequelize.sync({ force: true });
   console.log(`Server listening on port ${PORT}`);
-});
+
+  fetchAndSaveCountries();
+  });
 
 
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 // Este código representa la configuración y el arranque del servidor en una aplicación Node.js con Express. A continuación, se explica cada parte del código:

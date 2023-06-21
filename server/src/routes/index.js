@@ -7,9 +7,9 @@ const loginRouter = require("./loginRouter");
 const router = Router();
 
 
-router.use("/activities", activitiesRouter);
-router.use("/countries", countriesRouter);
-router.use("/login", loginRouter);
+router.use("/", activitiesRouter);
+router.use("/", countriesRouter);
+router.use("/", loginRouter);
 
 
 module.exports = router;

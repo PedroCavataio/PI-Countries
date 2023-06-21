@@ -1,4 +1,5 @@
-const { DataTypes } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
+const { v4: uuidv4 } = require("uuid");
 
 const Activity = (sequelize) => {  
    sequelize.define('Activity', {

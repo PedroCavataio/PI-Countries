@@ -1,9 +1,13 @@
 const countrieFunc = (req, res) => {
-    res.status(200).send("esto es countries");
+    const { name, race } = req.query
+
+    res.status(200).send(`esto es countries ${name}`);
   };
 
   const countrieSearch = (req, res) => {
-    res.status(200).send("esto es countrieSearch");
+    const {id} = req.params;
+
+    res.status(200).send(`esto es countrieSearch ${id}`);
   };
 
   const countrieName = (req, res) => {

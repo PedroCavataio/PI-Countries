@@ -1,3 +1,5 @@
+const users = require('../utils/users.js');
+ 
  const loginFunc = (req, res) => {
   const { email, password } = req.query;
   let access = false;

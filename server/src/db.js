@@ -7,7 +7,6 @@ const CountryModel = require("./models/Country");
 const ActivityModel = require("./models/Activity");
 
 const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
-  
   logging: false, 
   native: false, 
 });
