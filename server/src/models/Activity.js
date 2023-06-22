@@ -5,9 +5,9 @@ const Activity = (sequelize) => {
    sequelize.define('Activity', {
 
   id: {
-    type: DataTypes.UUID,    //(Universally Unique Identifier) identificador único 
-    defaultValue: DataTypes.UUIDV4,   //se generan de forma completamente aleatoria
+    type: DataTypes.INTEGER,
     primaryKey: true,
+    autoIncrement: true,
     allowNull: false,
   },
   name: {
@@ -26,9 +26,23 @@ const Activity = (sequelize) => {
     type: DataTypes.INTEGER,
   },
   season: {
-    type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false,
+    validate: {
+      isValidSeasons(value) {
+        const validSeasons = ['Summer', 'Winter', 'Spring', 'Fall'];
+        for (const season of value) {
+          if (!validSeasons.includes(season)) {
+            throw new Error(`Invalid season: ${season}`);
+          }
+        }
+      },
+    },
   },
+  countryIds: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
+    allowNull: false,
+  }
 },
 
 {timestamps: false });

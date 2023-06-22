@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { Sequelize, DataTypes } = require("sequelize");
+const { Sequelize, DataTypes, Op  } = require("sequelize");
 const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
@@ -32,9 +32,9 @@ ActivityModel(sequelize);
 
 const {Country, Activity} = sequelize.models;
 
-Country.belongsToMany(Activity, { through: "CountryActivitys" });
-Activity.belongsToMany(Country, { through: "CountryActivitys" });
+Country.belongsToMany(Activity, { through: "CountryActivity" });
+Activity.belongsToMany(Country, { through: "CountryActivity" });
 
-module.exports = {sequelize, ...sequelize.models };  //models exporta una func q define el modelo
+module.exports = {sequelize, ...sequelize.models, Op };  //models exporta una func q define el modelo
   
 

@@ -5,9 +5,10 @@ const Country = (sequelize) => {
    sequelize.define('Country', {
 
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(3), //UUID,  
       primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      defaultValue: () => uuidv4()
     },
 
     name: {
@@ -33,6 +34,10 @@ const Country = (sequelize) => {
     population: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      get() {                                           //para mostrar el número en una página web, puedes utilizar la función toLocaleString() para formatear el número con separador de miles
+        const value = this.getDataValue("population");         //const formattedPopulation = population.toLocaleString();
+        return value ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : null;
+      }
     },
 
   },

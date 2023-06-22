@@ -4,18 +4,16 @@ const morgan = require("morgan");
 const cors = require("cors");
 const server = express();
 
-
 //middlewares
 server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, DELETE');next();});
-
 server.use(morgan("dev"));
 server.use(express.json());   //funcion de parseo
 server.use(cors());
-server.use("/countries", router);
+server.use("/", router);
 server.use(router);  //CONFIGURAMOS NUESTRO ROUTER PRINCIPAL.  punto de entrada al localhost => /routes/index  
 
 module.exports = server;
