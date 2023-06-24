@@ -5,7 +5,7 @@ const Country = (sequelize) => {
    sequelize.define('Country', {
 
     id: {
-      type: DataTypes.STRING(3), //UUID,  
+      type: DataTypes.STRING, //UUID,  
       primaryKey: true,
       allowNull: false,
       defaultValue: () => uuidv4()
