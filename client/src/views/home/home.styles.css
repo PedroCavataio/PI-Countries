@@ -1,0 +1,15 @@
+.nav {
+    position: absolute;
+    top: 0;
+}
+
+.home {
+  height: 100vh;
+}
+
+.countries {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}

@@ -1,0 +1,59 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://img.freepik.com/vector-premium/blanco-negro-planeta-tierra-clipart-vector-pagina-colorear-planeta-tierra_860056-457.jpg");
+  background-size: 30%; /* Cambia el tamaño de la imagen según tus necesidades */
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.contenedor {
+  border: 2px solid #fa000000;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #0665b300;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 1rem;
+}
+
+.form-input {
+  height: 1rem;
+  padding: .5rem;
+  font-size: 1.0rem;
+  border: 1px solid #022a6679;
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgba(163, 167, 165, 0.315);
+  margin-left: -3%;
+  
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.form-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #015791;
+}

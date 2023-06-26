@@ -1,0 +1,54 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://images4.alphacoders.com/665/665825.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    max-width: 450px;
+    height: 600px;
+    border-radius: 5%;
+    background-color: #01192969;
+  }
+  
+  .title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #e9fa02;
+  }
+  
+  .description {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #f2f2f2;
+  }
+  
+  .sub-description {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #f2f2f2;
+  }
+  
+  .enter-button {
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5%;
+  }
+  
+  .enter-button:hover {
+    background-color: #555;
+  }
+  
