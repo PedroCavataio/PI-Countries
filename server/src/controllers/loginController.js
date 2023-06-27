@@ -1,4 +1,4 @@
-const users = require('../utils/users.js');
+const users = require('../utils/users');
 
 const authenticate = (email, password) => {
   let access = false;

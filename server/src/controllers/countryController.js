@@ -5,10 +5,10 @@ const searchCountry = async (req, res) => {
 
   try {
     const countries = await Country.findAll({
-      where: sequelize.literal(`LOWER("name") = LOWER('${name}')`),
+      //where: sequelize.literal(`LOWER("name") = LOWER('${name}')`),
       where: {
         name: {
-          /* [Op.iLike]: `%${name}%`, */
+          [Op.iLike]: `%${name}%`, 
         },
       },
     });
