@@ -16,6 +16,7 @@
   }
   
   .about-container h2 {
+    position: relative;
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
@@ -60,23 +61,29 @@
     margin-top: 30px;
     color: aliceblue;
   }
-  
-  .enter-button {
-    padding: 10px 20px;
-    background-color: #694105ce;
+
+  .enter-button-about {
+    height: 50px;
+    background-color: #333;
     color: #fff;
-    font-size: 16px;
-    border: none;
     border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 2%;
-    margin-top: 2%;
+    /* cursor: pointer; */
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
   }
-  
-  .enter-button:hover {
-    background-color: #694105;
+
+   .enter-button-about:hover {
+    background-color: #dddedf;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.658);
+    transform: scale(1.1);
+    color: #181717;
+  }
+
+  .enter-button-about-text span {
+    font-size: 18px;    
   }
   
   .profile-image {
@@ -85,5 +92,11 @@
     border-radius: 8px;
     margin-bottom: -25px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
+  }
+
+  .profile-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.658);
+    transition: transform 0.4s;
   }
   

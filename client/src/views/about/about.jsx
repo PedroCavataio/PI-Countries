@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './about.styles.css';
-import fotoPedro from '../../components/img/fotoPedro.jpg';
+import fotoPedro from '../../assets/fotoPedro.jpg';
 
 const About = () => {
   const navigate = useNavigate();
@@ -45,7 +45,8 @@ const About = () => {
             </ul>
             </div>
           </div>
-      <button className="enter-button" onClick={handleEnter}>Go Home</button>
+      <button className="enter-button-about" onClick={handleEnter}>
+        <span className="enter-button-about-text">Go Home</span></button>
     </div>
   );
 };

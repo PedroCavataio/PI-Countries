@@ -1,4 +1,4 @@
-import styles from './navBar.styles.css';
+import styles from './navBar.styles.module.css';
 import { NavLink } from "react-router-dom";
 import React, { useState }  from "react";
 import { useEffect } from "react";
@@ -25,26 +25,25 @@ function NavBar() {
 
   return (
     <div className={styles.navBarContainer}>
-      <div className={styles.searchNavBox}>
-        <form>
-          <NavLink to="/form">
-            <button className={styles.navInfoBoton}>Log out</button>
-          </NavLink>
-
-          <NavLink to="/home">
-            <button className={styles.navInfoBoton}>Home</button>
-          </NavLink>
-
-          <NavLink to="/about">
-            <button className={styles.navInfoBoton}>About</button>
-          </NavLink>
-
-          <NavLink to="/activities">
-            <button className={styles.navInfoBoton}>Activities</button>
-          </NavLink>
-          
-          <input placeholder="Search" value={searchText} onChange={handleInputChange}/>
-        </form>
+      <div className={styles.navBar}>
+        <NavLink to="/form" className={styles.navLink}>
+          Log out
+        </NavLink>
+        <NavLink to="/home" className={styles.navLink}>
+          Home
+        </NavLink>
+        <NavLink to="/about" className={styles.navLink}>
+          About
+        </NavLink>
+        <NavLink to="/activities" className={styles.navLink}>
+          Activities
+        </NavLink>
+        <input
+          placeholder="Search"
+          value={searchText}
+          onChange={handleInputChange}
+          className={styles.searchInput}
+        />
       </div>
     </div>
   );

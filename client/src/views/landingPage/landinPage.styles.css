@@ -6,30 +6,48 @@
     text-align: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("https://images4.alphacoders.com/665/665825.jpg");
+    background-image: url("../../assets/imgLanding.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
   }
   
-  .container {
+  .container-landing {
     max-width: 450px;
     height: 600px;
     border-radius: 5%;
     background-color: #01192969;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
   }
   
-  .title {
+  .title-landing {
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: #e9fa02;
+    color: #fcfafd;
   }
   
-  .description {
+  .description-landing {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: #f2f2f2;
   }
+
+  .descriptionH {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #e9fa02;
+    font-weight: 900;
+  }
+
+  .descriptionH:hover {
+    transform: scale(1.1);
+  }
+
+  .descriptionH a:link,
+  .descriptionH a:visited {
+    color: inherit;
+    text-decoration: none;
+}
   
   .sub-description {
     font-size: 1.5rem;
@@ -37,18 +55,22 @@
     color: #f2f2f2;
   }
   
-  .enter-button {
+  .enter-button-landing {    
     padding: 1rem 2rem;
-    font-size: 1.8rem;
+    font-size: 1.1rem;
     background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 5%;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
   }
   
-  .enter-button:hover {
+  .enter-button-landing:hover {
     background-color: #555;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.658);
+    transform: scale(1.1);
+    transition: transform 0.4s;
   }
   

@@ -11,15 +11,17 @@ const Landing = () => {
 
   return (
     <div className="landing-page">
-        <div className='container'>
-      <h1 className="title">#SoyHenry!</h1>
-      <h2 className="description">Bienvenidos al Proyecto Individual</h2>
-      <h2 className="description">Tema: Countries</h2>
-      <h4 className="sub-description">Carrera: Desarrollo Full Stack</h4>
-      <h4 className="sub-description">Alumno: Pedro Francisco Cavataio</h4>
-      <button className="enter-button" onClick={handleEnter}>
-        Ingresar
-      </button>
+      <div className='container-landing'>
+        <h2 className="description-landing">Bienvenidos al Proyecto Individual</h2>
+        <h1 className="title-landing">"Countries"</h1>
+        <h2 className="sub-description">By Pedro Francisco Cavataio</h2>
+        <h3 className="descriptionH"><a href="https://www.soyhenry.com/?utm_source=google&utm_medium=cpc&utm_campaign=GADS_SEARCH_ARG_BRAND&utm_content=Brand&gad=1&gclid=Cj0KCQjwjryjBhD0ARIsAMLvnF_GWZ-MKGdG13wh7BrKQq-0ogMsxu2AKchOIyka-B0e6GRDFq-TwRgaAizNEALw_wcB" target="_blank" rel="noopener noreferrer">
+        #SoyHenry!</a>
+        </h3>
+        <h4 className="sub-description">Desarrollo Full Stack</h4>
+          <button className="enter-button-landing" onClick={handleEnter}>
+          get into
+          </button>
       </div>
     </div>
   );

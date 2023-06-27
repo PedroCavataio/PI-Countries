@@ -1,15 +1,64 @@
-.nav {
-    position: absolute;
-    top: 0;
+.styles-nav {
+  position: absolute;
+  top: 0;  
 }
 
-.home {
+.styles-home {
   height: 100vh;
+  position: relative;
 }
 
 .countries {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .1em;
+}
+
+.pagination-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background-color: #155c7c;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.pagination button {
+  padding: 0.5em 1em;
+  margin: 0 0.25em;
+  background-color: #fcf7f7;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.page-numbers {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #fcf7f7;
+}
+
+.page-numbers li {
+  margin: 0 0.25em;
+  cursor: pointer;
+}
+
+.page-numbers li.active {
+  font-weight: bold;
+  color: rgb(250, 233, 3)
+}
+
+.sort-buttons {
+  margin-bottom: 3em;
 }

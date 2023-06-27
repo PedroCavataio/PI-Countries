@@ -1,23 +1,24 @@
-import './countryDetails.styles.css'
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import "./countryDetails.styles.css";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCountryById } from "../../redux/actions";
+
+import axios from "axios";
 
 const CountryDetails = ({ countryId }) => {
-  const [country, setCountry] = useState(null);
+  const dispatch = useDispatch();
+  const country = useSelector((state) => state.selectedCountry);
 
   useEffect(() => {
-    const fetchCountryDetails = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3001/countries/${countryId}`);
-        const { data } = response;
-        setCountry(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    dispatch(getCountryById(getCountryId()));
+  }, []);
 
-    fetchCountryDetails();
-  }, [countryId]);
+  function getCountryId() {
+    const url = window.location.pathname.split("/"); // Obtener la ruta de la URL actual
+    const countryId = url.pop(); // Eliminar y obtener el último fragmento de la matriz
+
+    return countryId;
+  }
 
   if (!country) {
     return <div>Loading...</div>;
