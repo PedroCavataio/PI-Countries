@@ -22,22 +22,26 @@ function NavBar() {
     setSearchText(event.target.value);
   }
 
-
   return (
     <div className={styles.navBarContainer}>
       <div className={styles.navBar}>
-        <NavLink to="/form" className={styles.navLink}>
+        
+        <NavLink to="/" className={styles.navLink}>
           Log out
         </NavLink>
+
         <NavLink to="/home" className={styles.navLink}>
           Home
-        </NavLink>
-        <NavLink to="/about" className={styles.navLink}>
-          About
-        </NavLink>
+        </NavLink>   
+
         <NavLink to="/activities" className={styles.navLink}>
           Activities
         </NavLink>
+
+        <NavLink to="/about" className={styles.navLink}>
+          About
+        </NavLink>
+
         <input
           placeholder="Search"
           value={searchText}
@@ -49,4 +53,6 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavBar; 
+
+

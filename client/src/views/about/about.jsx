@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './about.styles.css';
 import fotoPedro from '../../assets/fotoPedro.jpg';
+import './about.styles.css';
 
 const About = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const About = () => {
 
   return (
     <div className="about-container">
-      <img src={fotoPedro} alt="Foto de Pedro Cavataio" className="profile-image" />
+      <img src={fotoPedro} alt="Foto Pedro Cavataio" className="profile-image" />
       <h2 className="nameAbout">Pedro Cavataio</h2>
       <div className="contAbout">
       <p>

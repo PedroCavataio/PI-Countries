@@ -1,9 +1,8 @@
-import "./countryDetails.styles.css";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryById } from "../../redux/actions";
-
 import axios from "axios";
+import styles from "./countryDetails.styles.module.css";
 
 const CountryDetails = ({ countryId }) => {
   const dispatch = useDispatch();
@@ -25,7 +24,7 @@ const CountryDetails = ({ countryId }) => {
   }
 
   return (
-    <div>
+    <div className={styles["country-details-container"]}>
       <h2>{country.name}</h2>
       <img src={country.flag} alt={`Flag of ${country.name}`} />
       <p>ID: {country.id}</p>

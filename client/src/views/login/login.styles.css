@@ -1,0 +1,64 @@
+.login-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.planetLogin-image {
+  position: absolute;
+  top: 31%; /* Alinea verticalmente al centro */
+  left: 83%; /* Alinea horizontalmente al centro */
+  transform: translate(-50%, -50%); /* Centra el elemento */
+  z-index: -1; /* Envía el elemento al fondo */
+}
+
+.contenedor {
+  border: 2px solid #fa000000;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(6, 101, 179, 0);
+}
+
+.login-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  color: #252525;
+}
+
+.login-input {
+  height: 1.5rem;
+  padding: .5rem;
+  font-size: 1.0rem;
+  border: 2px solid #2d2d2ee3;
+  border-radius: 5px;
+  width: 100%;
+  background-color: rgba(175, 177, 177, 0.164);
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.login-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #c0bfbfec;
+  color: #272727;
+  
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  color: aliceblue;
+  background-color: #3e3f3ecb;
+}

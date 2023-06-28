@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './form.styles.css'; 
+import './login.styles.css'; 
+import fotoMundo from "../../assets/mundoLogin.avif"
 
-const Form = ({ onLogin, access }) => {
+const Login = ({ onLogin, access }) => {
   const [userData, setUserData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
 
@@ -15,7 +16,7 @@ const Form = ({ onLogin, access }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
+    const validationErrors = validateLogin();
     if (Object.keys(validationErrors).length === 0) {
       onLogin(userData);
       setUserData({ email: '', password: '' });
@@ -25,7 +26,7 @@ const Form = ({ onLogin, access }) => {
     }
   };
 
-  const validateForm = () => {
+  const validateLogin = () => {
     const errors = {};
 
     if (!userData.email) {
@@ -55,9 +56,12 @@ const Form = ({ onLogin, access }) => {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="login-container" onSubmit={handleSubmit}>
+      <div>
+         <img src={fotoMundo} alt="Foto Mundo Longin" className="planetLogin-image"/>
+      </div>
        <div className="contenedor">
-          <div className="form-group">
+          <div className="login-group">
             <label htmlFor="email">Email:</label>
             <input
               type="email"
@@ -65,13 +69,13 @@ const Form = ({ onLogin, access }) => {
               name="email"
               value={userData.email}
               onChange={handleChange}
-              className="form-input"
+              className="login-input"
               disabled={access}
               autoFocus
             />
             {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
-            <div className="form-group">
+            <div className="login-group">
               <label htmlFor="password">Password:</label>
               <input
                 type="password"
@@ -79,13 +83,13 @@ const Form = ({ onLogin, access }) => {
                 name="password"
                 value={userData.password}
                 onChange={handleChange}
-                className="form-input"
+                className="login-input"
                 disabled={access}
                 autoFocus
               />
               {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
-            <button type="submit" className="form-button" disabled={access}>
+            <button type="submit" className="login-button" disabled={access}>
               Submit
             </button>
           </div>
@@ -93,4 +97,4 @@ const Form = ({ onLogin, access }) => {
   );
 };
 
-export default Form;
+export default Login;
