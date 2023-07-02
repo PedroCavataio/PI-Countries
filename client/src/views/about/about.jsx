@@ -13,8 +13,8 @@ const About = () => {
   return (
     <div className="about-container">
       <img src={fotoPedro} alt="Foto Pedro Cavataio" className="profile-image" />
-      <h2 className="nameAbout">Pedro Cavataio</h2>
-      <div className="contAbout">
+      <h2 class="nameAbout"> "Pedro Cavataio" </h2>
+      <div className="contAbout-texto">
       <p>
         Tecnologías utilizadas, etc.  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque in minus unde rerum nam dolorem deserunt tempora ad reprehenderit, earum est aliquid odio illum quasi assumenda! Cum, quos. Amet, autem.
       </p>
@@ -24,7 +24,7 @@ const About = () => {
               <li>AJAX.</li>
               <li>Métodos HTTP.</li>
               <li>Eventos.</li>
-              <li>Módulos.</li>
+              <li>Módulos/Blunders.</li>
               <li>Exportación.</li>
               <li>Webpack.</li>
               <li>Componentes.</li>
@@ -34,7 +34,7 @@ const About = () => {
               <li>CSS modules.</li>
               <li>Styled Components.</li>
               <li>Estado.</li>
-              <li>Ciclo de vida.</li>
+              <li>LifeCicle.</li>
               <li>Hooks.</li>
               <li>Configuración.</li>
               <li>Navegación.</li>
@@ -42,11 +42,22 @@ const About = () => {
               <li>Keys.</li>
               <li>Redux.</li>
               <li>Flow de Redux.</li>
+              <li>ES6.</li>
+              <li>Routing.</li>
+              <li>Forms.</li>
+              <li>Node JS.</li>
+              <li>Promises.</li>
+              <li>Express.</li>
+              <li>Async Await.</li>
+              <li>Testing.</li>
+              <li>SQL.</li>
+              <li>Posgrest.</li>
             </ul>
             </div>
           </div>
       <button className="enter-button-about" onClick={handleEnter}>
-        <span className="enter-button-about-text">Go Home</span></button>
+        <span className="enter-button-about-text">Go Home</span>
+      </button>
     </div>
   );
 };

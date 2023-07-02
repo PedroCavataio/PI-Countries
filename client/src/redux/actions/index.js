@@ -5,6 +5,11 @@ export const GET_COUNTRY_BY_NAME = "GET_COUNTRY_BY_NAME";
 export const GET_COUNTRY_BY_ID = "GET_COUNTRY_BY_ID";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const CREATE_ACTIVITY = "CREATE_ACTIVITY";
+export const SORT_BY_NAME = "SORT_BY_NAME";
+export const SORT_BY_POPULATION = "SORT_BY_POPULATION";
+export const SET_CONTINENT_FILTER = "SET_CONTINENT_FILTER";
+export const SET_ACTIVITY_FILTER = "SET_ACTIVITY_FILTER";
+
 
 export function getCountries() {
   return async function (dispatch) {
@@ -79,5 +84,32 @@ export function createActivity(activity) {
       type: "CREATE_ACTIVITY",
       payload: response.data,
     });
+  };
+}
+
+
+export function sortByName() {
+  return {
+    type: SORT_BY_NAME,
+  };
+}
+
+export function sortByPopulation() {
+  return {
+    type: SORT_BY_POPULATION,
+  };
+}
+
+export function setContinentFilter(continentFilter) {
+  return {
+    type: SET_CONTINENT_FILTER,
+    payload: continentFilter,
+  };
+}
+
+export function setActivityFilter(activityFilter) {
+  return {
+    type: SET_ACTIVITY_FILTER,
+    payload: activityFilter,
   };
 }

@@ -3,23 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCountries, getActivities } from "../../redux/actions";
 import React from "react";
 import Card from "../../components/card/card.component";
-import styles from "./home.styles.css";
+import styles from "../home/home.styles.css";
+import FotoHome from "../../assets/LandingyHome.jpg";
 
 function Home() {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.allCountries);
   const activities = useSelector((state) => state.activities);
-
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [nameOrder, setNameOrder] = useState(true);
   const [populationOrder, setPopulationOrder] = useState(true);
 
-  const [continents, setContinents] = useState([]);
-  const [activitiesSelected, setActivitiesSelected] = useState([]);
-
   const cardsPerPage = 10;
 
-  useEffect(() => {
+  useEffect(() => { 
     dispatch(getCountries());
     dispatch(getActivities());
   }, []);
@@ -29,15 +27,6 @@ function Home() {
       setCurrentPage(1);
     }
   }, [allCountries]);
-
-  // useEffect(() => {
-  //   allCountries = allCountries.filter(country => continents.includes(country.continent));
-  //   console.log('COUNTRIES FILTRADOS POR CONTINENTE--->', allCountries)
-  // }, [continents])
-
-  // useEffect(() => {  
-
-  // }, [activitiesSelected])
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -73,109 +62,25 @@ function Home() {
     }
   };
 
-  const sortByName = () => {
-    setNameOrder(!nameOrder);
-    return allCountries.sort(function (a, z) {
-      if (nameOrder) {
-        return a.name.localeCompare(z.name);
-      } else {
-        return z.name.localeCompare(a.name);
-      }
-    });
-  };
-
-  const sortByPopulation = () => {
-    setPopulationOrder(!populationOrder);
-    return allCountries.sort(function (a, z) {
-      const poblacionA = a.population
-        ? parseFloat(a.population.replace(/\./g, ""))
-        : (a.population = 0);
-      const poblacionZ = z.population
-        ? parseFloat(z.population.replace(/\./g, ""))
-        : (z.population = 0);
-      if (populationOrder) {
-        return poblacionA - poblacionZ;
-      } else {
-        return poblacionZ - poblacionA;
-      }
-    });
-  };
-
   const renderPaginationButtons = () => {
     return (
       <div className="pagination-container">
         <div className="pagination">
           <button onClick={prevPage} disabled={currentPage === 1}>
-            Previous
+          ❮
           </button>
           <ul className="page-numbers">{renderPageNumbers()}</ul>
           <button onClick={nextPage} disabled={currentPage === pageNumbers}>
-            Next
+          ❯
           </button>
         </div>
       </div>
     );
   };
 
-  const renderSortButtons = () => {
-    return (
-      <div className="sort-buttons">
-        <button onClick={sortByName}>Sort by Name</button>
-
-        <button onClick={sortByPopulation}>Sort by Population</button>
-      </div>
-    );
-  };
-
-  const handleContinentFilter = (event) => {
-    const selectedContinents = Array.from(event.target.options)
-      .filter((option) => option.selected)
-      .map((option) => option.value);
-
-    setContinents(selectedContinents);
-  };
-
-  const handleActivityFilter = (event) => {
-    const selectedActivities = Array.from(event.target.options)
-      .filter((option) => option.selected)
-      .map((option) => option.value);
-
-    setActivitiesSelected(selectedActivities);
-  };
-
-  const renderFilterButtons = () => {
-    return (
-      <div className="filter-buttons">
-        <label>
-          Continents:
-          <select multiple value={continents} onChange={handleContinentFilter}>
-            <option value="America">America</option>
-            <option value="Asia">Asia</option>
-            <option value="Africa">Africa</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-            <option value="Antarctica">Antarctica</option>
-          </select>
-        </label>
-
-        <label>Activities:</label>
-        <select
-          multiple
-          value={activitiesSelected}
-          onChange={handleActivityFilter}
-        >
-          {activities.map((activity) => {
-            return <option value={activity.id}>{activity.name}</option>;
-          })}
-        </select>
-      </div>
-    );
-  };
-
   return (
-    <div className={styles.home}>
-      {renderSortButtons()}
-      {renderFilterButtons()}
+    <div className="home-container-principal">
+      <div className={styles.sidebar}></div>
       <div className="countries">
         {displayedCards &&
           displayedCards.map((country) => (
@@ -188,6 +93,7 @@ function Home() {
             />
           ))}
       </div>
+
       {renderPaginationButtons()}
     </div>
   );

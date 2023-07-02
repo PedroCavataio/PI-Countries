@@ -2,31 +2,105 @@ import {
   GET_COUNTRIES,
   GET_COUNTRY_BY_NAME,
   GET_COUNTRY_BY_ID,
-  GET_ACTIVITIES
-} from "../actions/index.js";
-import actions from "../actions/index.js";
+  GET_ACTIVITIES,
+  SORT_BY_NAME,
+  SORT_BY_POPULATION,
+  SET_CONTINENT_FILTER,
+  SET_ACTIVITY_FILTER,
 
-let initialState = { allCountries: [], selectedCountry: {}, activities: [] };
+} from "../actions/index.js";
+
+
+let initialState = { 
+  allCountries: [], 
+  selectedCountry: {}, 
+  activities: [], 
+  sortByNameOrder: false, 
+  sortByPopulationOrder: false,
+  continentFilter: [],
+  activityFilter: [],
+};
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
+
     case GET_COUNTRIES:
       return {
         ...state,
         allCountries: action.payload,
       };
+
     case GET_COUNTRY_BY_NAME:
       return {
         ...state,
         allCountries: action.payload,
       };
+
     case GET_COUNTRY_BY_ID:
       return { ...state, selectedCountry: action.payload };
+
     case GET_ACTIVITIES:
-      return { ...state, activities: action.payload };
+       return { ...state, activities: action.payload };
+
+    case SORT_BY_NAME:
+      const countriesByName = [...state.allCountries];
+
+      countriesByName.sort(function (a, z) {
+        if (state.sortByNameOrder) {
+          return a.name.localeCompare(z.name);
+        } else {
+          return z.name.localeCompare(a.name);
+        }
+      })
+      return {
+        ...state,
+        allCountries: countriesByName,
+        sortByNameOrder: !state.sortByNameOrder
+      };
+
+    case SORT_BY_POPULATION:
+      // Ordenar los países por población
+      const countriesByPopulation = [...state.allCountries];
+
+      countriesByPopulation.sort(function (a, z) {
+        const poblacionA = a.population
+          ? parseFloat(a.population.replace(/\./g, ""))
+          : (a.population = 0);
+        const poblacionZ = z.population
+          ? parseFloat(z.population.replace(/\./g, ""))
+          : (z.population = 0);
+        if (state.sortByPopulationOrder) {
+          return poblacionA - poblacionZ;
+        } else {
+          return poblacionZ - poblacionA;
+        }
+      })
+      return {
+        ...state,
+        allCountries: countriesByPopulation,
+        sortByPopulationOrder: !state.sortByPopulationOrder
+      };
+
+      case SET_CONTINENT_FILTER:   
+      return {
+        ...state,
+        allCountries: state.allCountries.filter(country => action.payload.includes(country.continent)),
+        continentFilter: action.payload
+      };
+      
+      case SET_ACTIVITY_FILTER:
+        return {
+          ...state,
+          allCountries: state.allCountries.filter(country => action.payload.includes(country.id)),
+          activityFilter: action.payload
+        };
+
+
     default:
       return state;
   }
 }
 
 export default rootReducer;
+
+

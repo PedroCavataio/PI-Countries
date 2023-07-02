@@ -5,15 +5,17 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 100vh;  
 }
 
 .planetLogin-image {
   position: absolute;
-  top: 31%; /* Alinea verticalmente al centro */
-  left: 83%; /* Alinea horizontalmente al centro */
+  top: 20%; /* Alinea verticalmente al centro */
+  left: 55%; /* Alinea horizontalmente al centro */
   transform: translate(-50%, -50%); /* Centra el elemento */
   z-index: -1; /* Envía el elemento al fondo */
+  width: 350px;
+  
 }
 
 .contenedor {
@@ -53,12 +55,13 @@ label {
   font-size: 1rem;
   background-color: #c0bfbfec;
   color: #272727;
-  
   border-radius: 5px;
   cursor: pointer;
+  border: 2px solid #2d2d2ee3;
 }
 
 .login-button:hover {
-  color: aliceblue;
-  background-color: #3e3f3ecb;
+  color: rgb(248, 246, 246);
+  background-color: #3c3d3ccb;
+  border: 2px solid #2d2d2ee3;
 }

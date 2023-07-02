@@ -3,16 +3,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width:80%;
     height: 600px;
     margin: 0 auto;
     padding: 50px;
-    border: 1px solid #013a0400;
     border-radius: 8px;
     text-align: center;
-    background-color: #037585;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.658);
-    color: #fdf905;
+    background-color: #153a15;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.986);
+    color: #068b02;    
   }
   
   .about-container h2 {
@@ -24,18 +23,25 @@
   
   .about-container p {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
   }
 
-  .contAbout {
+  .contAbout-texto {
+    border: 1px solid #068b02;  
     max-width: 80%;
     height: 800px;
     border-radius: 8px;
-    background-color: #0115226b;
+    background-color: #0a0a0a;
     padding: 2%;
     margin-top: 2%;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
+    box-shadow: 10px 15px 5px rgba(0, 0, 0, 0.658); 
   }  
+
+  .contAbout-texto:hover {
+    color: #0ceb04;
+    transform: scale(1.005);
+     border-color: #068b02;
+  } 
 
   .about-list {
     column-count: 4;
@@ -59,27 +65,38 @@
 
   .nameAbout {
     margin-top: 30px;
-    color: aliceblue;
+    color: rgb(242, 244, 247);
   }
 
+  .nameAbout::before {
+    content: "{";
+    color: rgb(253, 223, 51); /* Color para el corchete de apertura */
+  }
+  
+  .nameAbout::after {
+    content: "}";
+    color: rgb(253, 223, 51); /* Color para el corchete de cierre */
+  }
+  
   .enter-button-about {
     height: 50px;
-    background-color: #333;
-    color: #fff;
+    background-color: #0c0c0c;
+    color: #068b02;
     border-radius: 4px;
-    /* cursor: pointer; */
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.952);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    border: 1px solid #068b02; 
   }
 
    .enter-button-about:hover {
-    background-color: #dddedf;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.658);
+    background-color: #070707;
+    box-shadow: 0px 8px 8px rgb(0, 0, 0);
     transform: scale(1.1);
-    color: #181717;
+    color: #0ceb04;
+    border-color: #068b02;
   }
 
   .enter-button-about-text span {

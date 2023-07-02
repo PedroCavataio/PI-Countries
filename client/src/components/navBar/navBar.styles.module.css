@@ -3,8 +3,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background-color: #155c7c;
+  height: 120px;
+  background-color: #49494900;
   color: #fff;
   display: flex;
   justify-content: flex-start;
@@ -14,28 +14,118 @@
 
 .navBar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
 .navLink {
-  padding: 10px 20px;
-  margin-right: 10px;
-  color: #fff;
+  padding: 10px 10px;
+  margin-right: 5px;
+  color: rgb(148, 147, 147);
   text-decoration: none;
   font-size: 1rem;
+  width: 100px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
-.navLink:hover {
-  background-color: #dddedf;
-  color: #000;
-  border-radius: 5px;
+.navLink:hover {    
+  color: rgb(252, 251, 251);  ;  
+  
 }
 
 .searchInput {
-  padding: 8px;
+  width: 180px;
+  padding: 13px;
   margin-left: 10px;
   font-size: 1rem;
-  border: none;
+  border: 1px solid rgb(148, 147, 147);
+  border-radius: 5px;
+  background-color: #94adf888;
+}
+
+.label {
+  margin-right: 5%;
+  max-width: 30%;
+}
+
+.labelClass {
+  display: inline-flex;
+  align-items: center;
+  color: rgb(148, 147, 147);
+  /* background-color: #94adf888; */
+  /* border: 1px solid #fff; */
   border-radius: 5px;
 }
+
+.selectClass {
+  display: block;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: rgb(148, 147, 147);
+  width: 8em;
+  background-color: #94adf804;
+  overflow: auto;
+}
+
+.selectClass:hover {
+  color: rgb(148, 147, 147);
+  background-color: rgb(245, 243, 243);
+
+  ;  
+}
+
+/* Estilos del scrollbar para navegadores WebKit (Chrome, Safari) */
+.selectClass::-webkit-scrollbar {
+  width: 2px; /* Ancho del scrollbar */
+}
+
+.selectClass::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Color de fondo del track */
+}
+
+.selectClass::-webkit-scrollbar-thumb {
+  background-color: #999; /* Color del thumb */
+}
+
+
+.logAbout {
+  color: #918f8f;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.navLinkAbout {
+  color: #949393;
+}
+
+.navLinkLog {
+  color: rgb(148, 147, 147);
+}
+
+.navLinkAbout:hover {
+  color: rgb(252, 251, 251);  
+  border-radius: 5%;
+  width: 100%;
+  
+}
+
+.navLinkLog:hover {
+  color: rgb(252, 251, 251);  
+  border-radius: 5%;
+  width: 100%;
+    
+  }
+
+ .navHome {
+  color: rgb(148, 147, 147);
+ }
+
+ .navHome:hover {
+  color: #fff;
+ }

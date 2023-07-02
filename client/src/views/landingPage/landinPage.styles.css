@@ -6,7 +6,7 @@
     text-align: center;
     width: 100vw;
     height: 100vh;
-    background-image: url("../../assets/imgLanding.jpg");
+    background-image: url("../../assets/login.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@
     max-width: 450px;
     height: 600px;
     border-radius: 5%;
-    background-color: #01192969;
+    background-color: #01192916;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
   }
   
@@ -71,6 +71,6 @@
     background-color: #555;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.658);
     transform: scale(1.1);
-    transition: transform 0.4s;
+    
   }
   

@@ -32,8 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      {window.location.pathname !== "/landing" &&
-        window.location.pathname !== "/" && <NavBar className="styles-nav" />}
+      {window.location.pathname == "/home" && <NavBar className="styles-nav" />}
 
       <Routes>
         <Route path="/" element={<Login onLogin={login} access={access} />} />
