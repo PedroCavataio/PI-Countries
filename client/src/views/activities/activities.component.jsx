@@ -14,7 +14,7 @@ const Activities = () => {
   const [duration, setDuration] = useState("");
   const [season, setSeason] = useState("");
   const [countries, setCountries] = useState([]);
-
+  
   const allCountries = useSelector((state) => state.allCountries);
   const [continents, setContinents] = useState([]);
 
@@ -30,6 +30,7 @@ const Activities = () => {
     setName(selectedname);
   };
 
+ 
   const handleDifficultyChange = (event) => {
     const selectedDifficuly = Array.from(event.target.options)
       .filter((option) => option.selected)
@@ -58,6 +59,7 @@ const Activities = () => {
     const selectedCountries = Array.from(event.target.options)
       .filter((option) => option.selected)
       .map((option) => option.value);
+      console.log(selectedCountries)
 
     setCountries(selectedCountries);
   };
@@ -65,7 +67,6 @@ const Activities = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Validar que se haya seleccionado al menos una opción en cada campo obligatorio
     if (
       name === "" ||
       difficulty === "" ||
@@ -85,7 +86,6 @@ const Activities = () => {
     };
     dispatch(createActivity(activityForm));
 
-    // Reiniciar los campos después de enviar el formulario
     setName("");
     setSeason("");
     setDuration("");
@@ -95,8 +95,9 @@ const Activities = () => {
     navigate("/home");
   };
 
-  const handleGoBack = () => {
-    navigate(-1);
+  const handleEnter = () => {
+    navigate('/home');
+ 
   };
 
   return (
@@ -105,7 +106,7 @@ const Activities = () => {
         <div className={styles.formGroup}>
           <label htmlFor="Name">Name:</label>
           <select id="Name" value={name} onChange={handleNameChange}>
-            <option value="">select option</option>
+            <option value="">select activity name</option>
             <option value="Museo">Museo</option>
             <option value="Theater">Theater</option>
             <option value="Bike Ride">Bike Ride</option>
@@ -131,7 +132,7 @@ const Activities = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="difficulty">Difficulty:</label>
+          <label htmlFor="difficulty">select difficulty:</label>
           <select
             id="difficulty"
             value={difficulty}
@@ -153,7 +154,7 @@ const Activities = () => {
             value={duration}
             onChange={handleDurationChange}
           >
-            <option value="">select option</option>
+            <option value="">select duration</option>
             <option value="1"> 1 hs - Very Short</option>
             <option value="2">2 hs - Short</option>
             <option value="4">4 hs - Normal</option>
@@ -170,6 +171,7 @@ const Activities = () => {
         <div className={styles.formGroup}>
           <label htmlFor="season">Season:</label>
           <select id="season" value={season} onChange={handleSeasonChange}>
+            <option value="">select season</option>
             <option value="Spring">Spring</option>
             <option value="Summer">Summer</option>
             <option value="Fall">Fall</option>
@@ -177,22 +179,21 @@ const Activities = () => {
           </select>
         </div>
 
-        <div className={styles.formGroup}>
+         <div className={styles.formGroup}>
           <label htmlFor="countries">Countries:</label>
-          <select
+         <select
             multiple
             id="countries"
             value={countries}
             onChange={handleCountriesChange}
           >
-            {/* <option value="">select options</option> */}
-            {allCountries.map((country) => (
+             {allCountries.map((country) => (
               <option key={country.id} value={country.id}>
                 {country.name}
               </option>
             ))}
-          </select>
-        </div>
+          </select>  
+        </div> 
 
         <div className={styles.formActions}>
           <button className={styles.createActivityBtn} type="submit">
@@ -200,7 +201,7 @@ const Activities = () => {
           </button>
           <button
             className={styles["closeButton-Activities"]}
-            onClick={handleGoBack}
+            onClick={handleEnter}
           >
             Close
           </button>

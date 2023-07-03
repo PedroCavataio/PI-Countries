@@ -28,9 +28,9 @@ function Home() {
     }
   }, [allCountries]);
 
-  const handlePageChange = (pageNumber) => {
+    const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-  };
+    };
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

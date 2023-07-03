@@ -20,10 +20,10 @@ html, body {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   width: 30vw; /* Ocupa toda la pantalla horizontalmente */
   flex-direction: column;
-  background-color: #f2f2f221;
+  background-color: #f2f2f227;
   /* margin-top: 70px;
   margin-left: 10%; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -93,13 +93,15 @@ html, body {
   position: absolute;
   background-color: rgba(245, 245, 220, 0);
   right: 56%;
-  top: 2%;  
+  top: 12%;  
   color: #606060;
   
 }
 
 .closeButton-detail:hover {
 color: rgb(255, 251, 251);
+border-color: rgb(247, 245, 245);
+background-color: rgba(240, 248, 255, 0);
 }
 
 

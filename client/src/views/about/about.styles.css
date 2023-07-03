@@ -3,15 +3,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:80%;
-    height: 600px;
+    width:90%;
+    height: 700px;
     margin: 0 auto;
-    padding: 50px;
+    padding: 5px;
     border-radius: 8px;
     text-align: center;
     background-color: #153a15;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.986);
-    color: #068b02;    
+    color: #068b02; 
+    margin-top: 2%; 
+    margin-bottom: 2%;  
   }
   
   .about-container h2 {
@@ -27,13 +29,13 @@
   }
 
   .contAbout-texto {
+    align-items: center;
     border: 1px solid #068b02;  
-    max-width: 80%;
-    height: 800px;
+    max-width: 90%;
+    height:40%;
     border-radius: 8px;
     background-color: #0a0a0a;
     padding: 2%;
-    margin-top: 2%;
     box-shadow: 10px 15px 5px rgba(0, 0, 0, 0.658); 
   }  
 
@@ -80,6 +82,7 @@
   
   .enter-button-about {
     height: 50px;
+    width: 700px;
     background-color: #0c0c0c;
     color: #068b02;
     border-radius: 4px;
@@ -87,27 +90,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    border: 1px solid #068b02; 
+    margin-top: 10px;
+    border: 1px solid #0ceb04; 
   }
 
    .enter-button-about:hover {
     background-color: #070707;
     box-shadow: 0px 8px 8px rgb(0, 0, 0);
-    transform: scale(1.1);
+    transform: scale(1.05);
     color: #0ceb04;
-    border-color: #068b02;
+    border-color: #0ceb04;
   }
 
   .enter-button-about-text span {
-    font-size: 18px;    
+    font-size: 18px;  
   }
   
   .profile-image {
     width: 200px;
     height: auto;
     border-radius: 8px;
-    margin-bottom: -25px;
+    margin-bottom: -35px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
   }
 

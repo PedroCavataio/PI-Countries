@@ -1,9 +1,11 @@
 import styles from "./navBar.styles.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";  
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryByName, getCountries } from "../../redux/actions";
+import { useNavigate } from "react-router-dom";
+
 import {
   sortByName,
   sortByPopulation,
@@ -19,7 +21,9 @@ function NavBar() {
   const [continents, setContinents] = useState([]);
   const [activitiesSelected, setActivitiesSelected] = useState([]);
 
-  const activities = useSelector((state) => state.activities);
+  const navigate = useNavigate();
+
+  const activities = useSelector((state) => state.activities);  
 
   useEffect(() => {
     if (searchText.length > 0) {
@@ -41,23 +45,25 @@ function NavBar() {
     const selectedContinents = Array.from(event.target.options)
       .filter((option) => option.selected)
       .map((option) => option.value);
-
+      
     await dispatch(getCountries());
 
     setContinents(selectedContinents);
     dispatch(setContinentFilter(selectedContinents));
   };
 
-  const handleActivityFilter = async (event) => {
+
+ const handleActivityFilter = async (event) => {
     const selectedActivities = Array.from(event.target.options)
       .filter((option) => option.selected)
       .map((option) => option.value);
 
+      console.log(selectedActivities)
     await dispatch(getCountries());
 
     setActivitiesSelected(expandArray(selectedActivities));
     dispatch(setActivityFilter(expandArray(selectedActivities)));
-  };
+    };
 
   function expandArray(array) {
     const expandedArray = [];
@@ -74,16 +80,24 @@ function NavBar() {
     return expandedArray;
   }
 
+  const handleGoBack = () => {
+    navigate(0); 
+  }; 
+
   return (
     <div className={styles.navBarContainer}>
 
      <div className={styles.navBar}>
 
-      <NavLink to="/home" home={styles.navHome}>
-            HOME
-      </NavLink>
+        <NavLink
+          to="/home"
+          className={styles.navLink}
+          onClick={handleGoBack}
+        >
+          HOME
+        </NavLink>
 
-        <input
+         <input
           placeholder="Search"
           value={searchText}
           onChange={handleInputChange}
@@ -152,13 +166,16 @@ function NavBar() {
 </div>
 
         <div className={styles.logAbout}>
-          <NavLink to="/about" className={styles.navLinkAbout}>
-            ABOUT
-          </NavLink>
 
-          <NavLink to="/" className={styles.navLinkLog}>
+        <NavLink to="/" className={styles.navLinkLog}>
             LOG OUT
-          </NavLink>
+        </NavLink>
+
+        <NavLink to="/about" className={styles.navLinkAbout}>
+            ABOUT
+        </NavLink>
+
+          
         </div>
       </div>
     </div>

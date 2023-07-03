@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountryById } from "../../redux/actions";
-import axios from "axios";
 import styles from "./countryDetails.styles.module.css";
 import { useNavigate } from 'react-router-dom';
 
-const CountryDetails = ({ countryId }) => {
+const CountryDetails = ({}) => {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.selectedCountry);
   const navigate = useNavigate();
@@ -26,7 +25,7 @@ const CountryDetails = ({ countryId }) => {
   }
 
   const handleGoBack = () => {
-    navigate(-1); 
+    navigate("/home"); 
   };
 
   return (

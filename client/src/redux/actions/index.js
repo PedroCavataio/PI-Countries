@@ -48,11 +48,8 @@ export function getCountryByName(name) {
           "Ha ocurrido un error en la consulta. Por favor, intenta nuevamente."
         );
       }
-    } catch (error) {
-      // Manejo de errores
-      console.error(error);
-      // Mostrar mensaje de error al usuario
-      // Ejemplo:
+    } catch (error) {      
+      console.error(error);      
       alert(
         "Ha ocurrido un error en la consulta. Por favor, intenta nuevamente."
       );
@@ -80,13 +77,13 @@ export function createActivity(activity) {
       `http://localhost:3001/activity`,
       activity
     );
+
     return dispatch({
       type: "CREATE_ACTIVITY",
       payload: response.data,
     });
   };
 }
-
 
 export function sortByName() {
   return {

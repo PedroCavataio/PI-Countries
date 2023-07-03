@@ -16,7 +16,7 @@ const About = () => {
       <h2 class="nameAbout"> "Pedro Cavataio" </h2>
       <div className="contAbout-texto">
       <p>
-        Tecnologías utilizadas, etc.  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque in minus unde rerum nam dolorem deserunt tempora ad reprehenderit, earum est aliquid odio illum quasi assumenda! Cum, quos. Amet, autem.
+      ¡Hola! Soy Pedro y estoy emocionado por adentrarme en la industria del desarrollo. Aunque mi experiencia previa no es en este sector, considero que mi amplia trayectoria profesional me brinda una valiosa perspectiva y habilidades transferibles. Estoy comprometido con el aprendizaje continuo y ansioso por contribuir al crecimiento y éxito de los proyectos en los que participe. ¡Listo para asumir nuevos desafíos y hacer una diferencia en el mundo del desarrollo!
       </p>
           <div className="about-list">
             <ul>

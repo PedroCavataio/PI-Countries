@@ -43,6 +43,11 @@
   border: 1px solid rgb(148, 147, 147);
   border-radius: 5px;
   background-color: #94adf888;
+  color: #fcf9f9;
+}
+
+.searchInput:hover {
+  border: 1px solid rgb(251, 250, 250);
 }
 
 .label {
@@ -70,11 +75,14 @@
   width: 8em;
   background-color: #94adf804;
   overflow: auto;
+  opacity: 0%;
 }
 
 .selectClass:hover {
-  color: rgb(148, 147, 147);
-  background-color: rgb(245, 243, 243);
+  color: rgb(253, 252, 252);
+  /* background-color: rgb(245, 243, 243); */
+  background-color: #49494900;
+  opacity: 100%;
 
   ;  
 }
@@ -82,6 +90,7 @@
 /* Estilos del scrollbar para navegadores WebKit (Chrome, Safari) */
 .selectClass::-webkit-scrollbar {
   width: 2px; /* Ancho del scrollbar */
+  height: 2px;
 }
 
 .selectClass::-webkit-scrollbar-track {
@@ -122,10 +131,4 @@
     
   }
 
- .navHome {
-  color: rgb(148, 147, 147);
- }
-
- .navHome:hover {
-  color: #fff;
- }
+ 
