@@ -8,7 +8,7 @@ const CountryActivity = (sequelize) => {
       defaultValue: Sequelize.UUIDV4,
       primaryKey: true,
     },
-    // Otras columnas que desees agregar a la tabla CountryActivitys
+    
   },
   {timestamps: false });
 };

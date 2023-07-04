@@ -8,9 +8,6 @@ const createActivity = async (activityData, countryIds) => {
 
 const getActivities = async () => {
   const activities = await Activity.findAll();
-  if (activities.length === 0) {
-    throw new Error("No hay ninguna actividad aún");
-  }
   return activities;
 };
 

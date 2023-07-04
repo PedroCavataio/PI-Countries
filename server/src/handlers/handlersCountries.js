@@ -26,8 +26,7 @@ const countrieId = async (req, res) => {
   try {
     const country = await Country.findOne({
       where: sequelize.where(sequelize.fn('LOWER', sequelize.col('id')), idPais.toLowerCase()),  
-      //where: { id: idPais },
-      include: Activity,
+        include: Activity,
     });
     if (!country) {
       res.status(404).json({ error: "País no encontrado" });

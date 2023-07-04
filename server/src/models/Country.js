@@ -17,7 +17,7 @@ const Country = (sequelize) => {
     },
 
     flag: {
-      type: DataTypes.STRING,  //tener en cuenta "BLOB" para almacenar directamente la imagen en la base de datos
+      type: DataTypes.STRING,  
       allowNull: false,
     },
 
@@ -34,8 +34,8 @@ const Country = (sequelize) => {
     population: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      get() {                                           //para mostrar el número en una página web, puedes utilizar la función toLocaleString() para formatear el número con separador de miles
-        const value = this.getDataValue("population");         //const formattedPopulation = population.toLocaleString();
+      get() {                                           
+        const value = this.getDataValue("population");       
         return value ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : null;
       }
     },
