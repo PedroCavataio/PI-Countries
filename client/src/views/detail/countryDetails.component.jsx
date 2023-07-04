@@ -14,9 +14,8 @@ const CountryDetails = ({}) => {
   }, []);
 
   function getCountryId() {
-    const url = window.location.pathname.split("/"); // Obtener la ruta de la URL actual
-    const countryId = url.pop(); // Eliminar y obtener el último fragmento de la matriz
-
+    const url = window.location.pathname.split("/"); 
+    const countryId = url.pop(); 
     return countryId;
   }
 
@@ -25,7 +24,7 @@ const CountryDetails = ({}) => {
   }
 
   const handleGoBack = () => {
-    navigate("/home"); 
+    navigate(-1); 
   };
 
   return (
@@ -48,3 +47,4 @@ const CountryDetails = ({}) => {
 };
 
 export default CountryDetails;
+

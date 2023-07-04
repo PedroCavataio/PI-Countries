@@ -49,7 +49,6 @@ function rootReducer(state = initialState, action) {
           return b.name.localeCompare(a.name);
         }
       });
-
       return {
         ...state,
         allCountries: countriesByName,
@@ -88,22 +87,11 @@ function rootReducer(state = initialState, action) {
         continentFilter: action.payload
       };
       
+  
     case SET_ACTIVITY_FILTER:
-      let filter = [] 
-      let response = [] 
-      for (const country of action.payload) {
-          filter = state.allCountries.filter(element => element.id === country)
-          if (filter.length > 0) response.push(filter[0])
-        }
-        console.log(response)
-
       return {
         ...state,
-        allCountries: response, 
-          
-         // allCountries: state.allCountries.filter(country =>
-          //country.activities.map(activity => action.payload.includes(activity.id))
-       
+        allCountries: state.allCountries.filter(country => action.payload.includes(country.id)),
         activityFilter: action.payload
       };
 
