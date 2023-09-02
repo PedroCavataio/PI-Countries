@@ -19,6 +19,7 @@ const createActivity = async (req, res) => {
     const { countryIds } = body;
 
     const newActivity = await activitiesController.createActivity(body, countryIds);
+    console.log(body);
     res.status(201).json(newActivity);
   } catch (error) {
     res.status(500).json({ error: 'Error al crear una nueva actividad' + error });
