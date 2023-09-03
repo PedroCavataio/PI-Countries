@@ -14,11 +14,11 @@ function App() {
   const navigate = useNavigate();
 
   async function login(userData) {
-    const { email, password } = userData;
+    const { nombre, estacion } = userData;
     const URL = "http://localhost:3001/login/";
     try {
       const { data } = await axios.get(
-        URL + `?email=${email}&password=${password}`
+        URL + `?nombre=${nombre}&estacion=${estacion}`
       );
       const { access } = data;
       setAccess(access);

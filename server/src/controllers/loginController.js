@@ -1,14 +1,12 @@
 const users = require('../utils/users');
 
-const authenticate = (email, password) => {
+const authenticate = (nombre, estacion) => {
   let access = false;
-
   users.forEach(user => {
-    if (user.email === email && user.password === password) {
+    if (user.estacion === estacion) {
       access = true;
     }
   });
-
   return access;
 };
 
