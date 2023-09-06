@@ -10,47 +10,44 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-  }  
-
-  .primavera,
-.verano,
-.otoño,
-.invierno {  
-  width: 100vw;
-  height: 100vh;
-  background-size: 100% 115%; /* Modificación aquí */
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-  .primavera {
-    background-image: url("../../assets/primavera.jpg");
   }
-  .verano {
-    background-image: url("../../assets/verano.jpg");
-    
-  }
-  .otoño {
-  background-image: url("../../assets/otoño.jpg");
-  }
-  .invierno {
-    background-image: url("../../assets/login.jpg");
-  }
-
+  
   .container-landing {
-    padding: 2%;
-    max-width: 100%;
-    height: 30%;
+    max-width: 450px;
+    height: 600px;
     border-radius: 5%;
     background-color: #01192916;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.26);
-  }  
-    
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
+  }
+  
+  .title-landing {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #fcfafd;
+  }
+  
   .description-landing {
     font-size: 2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.5rem;
     color: #f2f2f2;
   }
+
+  .descriptionH {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #e9fa02;
+    font-weight: 900;
+  }
+
+  .descriptionH:hover {
+    transform: scale(1.1);
+  }
+
+  .descriptionH a:link,
+  .descriptionH a:visited {
+    color: inherit;
+    text-decoration: none;
+}
   
   .sub-description {
     font-size: 1.5rem;
@@ -59,19 +56,21 @@
   }
   
   .enter-button-landing {    
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #c0bfbfec;
-    color: #272727;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    background-color: #fffcfc23;
+    color: #fff;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid #2d2d2ee3;  
-    margin-top: 10%;  
+    margin-top: 5%;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.658);
   }
-
+  
   .enter-button-landing:hover {
-    color: rgb(248, 246, 246);
-    background-color: #3c3d3ccb;
-    border: 2px solid #2d2d2ee3;    
+    background-color: #fcf9f900;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.658);
+    transform: scale(1.1);
+    
   }
   

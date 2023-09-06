@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import CountryDetails from "./views/detail/countryDetails.component.jsx";
 import Home from "./views/home/home.jsx";
-import Nav from "./views/navResponsive/nav.jsx";
 import Login from "./views/login/login.jsx";
 import About from "./views/about/about.jsx";
 import Landing from "./views/landingPage/landingPage";
@@ -12,7 +11,6 @@ import Activities from "./views/activities/activities.component.jsx";
 
 function App() {
   const [access, setAccess] = useState(false);
-  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
   async function login(userData) {
@@ -24,8 +22,9 @@ function App() {
       );
       const { access } = data;
       setAccess(access);
-      setUserName(nombre);
-      
+      if (access) {
+        navigate("/landing");
+      }
     } catch (error) {
       console.error(error);
     }
@@ -33,13 +32,11 @@ function App() {
 
   return (
     <div className="App">
-      {window.location.pathname == "/landing" && <NavBar className="styles-nav" />}
-     
+      {window.location.pathname == "/home" && <NavBar className="styles-nav" />}
+
       <Routes>
         <Route path="/" element={<Login onLogin={login} access={access} />} />
-        <Route path="/nav" element={<Nav />} />
         <Route path="/landing" element={<Landing />} />
-        <Route path="/landing/:estacion" element={<Landing userName={userName} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/home/:id" element={<CountryDetails />} />
         <Route path="/about" element={<About />} />

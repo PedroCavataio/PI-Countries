@@ -94,7 +94,7 @@ function NavBar() {
           className={styles.navLink}
           onClick={handleGoBack}
         >
-          HOME
+          Inicio
         </NavLink>
 
          <input
@@ -109,7 +109,7 @@ function NavBar() {
           className={styles.navLink}
           onClick={() => dispatch(sortByName())}
         >
-          SORT BY NAME
+          Ordenar alfabeticamente
         </NavLink>
 
         <NavLink
