@@ -6,23 +6,38 @@
   justify-content: center;
   width: 100vw;
   height: 100vh;  
+  overflow: hidden;
+  background: #7ee0f8;
 }
 
 .planetLogin-image {
   position: absolute;
-  top: 20%; /* Alinea verticalmente al centro */
-  left: 55%; /* Alinea horizontalmente al centro */
-  transform: translate(-50%, -50%); /* Centra el elemento */
-  z-index: -1; /* Envía el elemento al fondo */
-  width: 350px;
-  
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio disponible */
+  /* z-index: -1; */
+}
+
+.nombre-image {
+  margin-left: 3%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 20%;
+  object-fit: cover; 
+  /* z-index: -1; */
 }
 
 .contenedor {
-  border: 2px solid #fa000000;
-  padding: 20px;
+  width: 20%;
+  margin-left: 50%;
+  border: 1px solid #fa000000; 
+  padding: 20px;  
   border-radius: 5px;
-  background-color: rgba(6, 101, 179, 0);
+  background-color: rgba(6, 77, 134, 0);
 }
 
 .login-group {
@@ -30,7 +45,7 @@
 }
 
 label {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #252525;
 }
 
@@ -38,10 +53,10 @@ label {
   height: 1.5rem;
   padding: .5rem;
   font-size: 1.0rem;
-  border: 2px solid #2d2d2ee3;
+  border: 1px solid #0505f100; 
   border-radius: 5px;
   width: 100%;
-  background-color: rgba(175, 177, 177, 0.164);
+  background-color: rgb(235, 235, 233);
 }
 
 .error-message {
@@ -53,15 +68,17 @@ label {
 .login-button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #c0bfbfec;
+  background-color: rgb(235, 235, 233);
   color: #272727;
   border-radius: 5px;
   cursor: pointer;
-  border: 2px solid #2d2d2ee3;
+  border: 1px solid #2d2d2e00;
+  margin-left: 50%;
 }
 
 .login-button:hover {
-  color: rgb(248, 246, 246);
-  background-color: #3c3d3ccb;
-  border: 2px solid #2d2d2ee3;
+  color: rgb(235, 235, 233);
+  background-color: #2d2c85cb;
+  border: 2px solid #2d2d2e00;
 }
+
