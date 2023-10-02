@@ -3,7 +3,7 @@ import './login.styles.css';
 import fotoMundo from "../../assets/mundoLogin.avif"
 
 const Login = ({ onLogin, access }) => {
-  const [userData, setUserData] = useState({ nombre: '', estacion: '' });
+  const [userData, setUserData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState({});
 
   const handleChange = (event) => {
@@ -19,7 +19,7 @@ const Login = ({ onLogin, access }) => {
     const validationErrors = validateLogin();
     if (Object.keys(validationErrors).length === 0) {
       onLogin(userData);
-      setUserData({ nombre: '', estacion: '' });
+      setUserData({ email: '', password: '' });
       setErrors({});
     } else {
       setErrors(validationErrors);
@@ -29,33 +29,31 @@ const Login = ({ onLogin, access }) => {
   const validateLogin = () => {
     const errors = {};
 
-    if (!userData.nombre) {
-      errors.nombre = 'El nombre es requerido';
-    } else if (!isValidNombre(userData.nombre)) {
-      errors.nombre = 'El nombre no es válido';
-    } else if (userData.nombre.length > 35) {
-      errors.nombre = 'El nombre no puede tener más de 35 caracteres';
+    if (!userData.email) {
+      errors.email = 'El email es requerido';
+    } else if (!isValidEmail(userData.email)) {
+      errors.email = 'El email no es válido';
+    } else if (userData.email.length > 35) {
+      errors.email = 'El email no puede tener más de 35 caracteres';
     }
 
-    if (!userData.estacion) {
-      errors.estacion = 'La estación del año es requerida';
-    } else if (userData.estacion.length < 5 || userData.estacion.length > 10) {
-      errors.estacion = 'La estación del año, debe tener entre 5 y 10 caracteres';
-    } else if (
-      userData.estacion !== "verano" &&
-      userData.estacion !== "otoño" && 
-      userData.estacion !== "primavera" &&
-      userData.estacion !== "invierno"
-      ) {
-        errors.estacion = 'Esa no es una estación del año válida, te doy una pista (invierno/primavera/verano/otoño)';
+    if (!userData.password) {
+      errors.password = 'La contraseña es requerida';
+    } else if (!hasNumber(userData.password)) {
+      errors.password = 'La contraseña debe contener al menos un número';
+    } else if (userData.password.length < 6 || userData.password.length > 10) {
+      errors.password = 'La contraseña debe tener entre 6 y 10 caracteres';
     }
     return errors;
   };
 
-  const isValidNombre = (nombre) => {
+  const isValidEmail = (email) => {
     return true;
   };
 
+  const hasNumber = (str) => {
+    return /\d/.test(str);
+  };
 
   return (
     <form className="login-container" onSubmit={handleSubmit}>
@@ -64,37 +62,35 @@ const Login = ({ onLogin, access }) => {
       </div>
        <div className="contenedor">
           <div className="login-group">
-            <label htmlFor="nombre"> "¿Cuál es tu nombre?"</label>
+            <label htmlFor="email">Email:</label>
             <input
-              placeholder="nombre"
-              type="text"
-              id="nombre"
-              name="nombre"
-              value={userData.nombre}
+              type="email"
+              id="email"
+              name="email"
+              value={userData.email}
               onChange={handleChange}
               className="login-input"
               disabled={access}
               autoFocus
             />
-            {errors.nombre && <span className="error-message">{errors.nombre}</span>}
+            {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
             <div className="login-group">
-              <label htmlFor="estacion">"¿Cuál es tu estación del año favorita?"</label>
+              <label htmlFor="password">Password:</label>
               <input
-                placeholder="estación"
-                type="text"
-                id="estacion"
-                name="estacion"
-                value={userData.estacion}
+                type="password"
+                id="password"
+                name="password"
+                value={userData.password}
                 onChange={handleChange}
                 className="login-input"
                 disabled={access}
                 autoFocus
               />
-              {errors.estacion && <span className="error-message">{errors.estacion}</span>}
+              {errors.password && <span className="error-message">{errors.password}</span>}
             </div>
             <button type="submit" className="login-button" disabled={access}>
-              Ingresar
+              Submit
             </button>
           </div>
     </form>

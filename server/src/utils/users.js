@@ -1,15 +1,6 @@
-module.exports = [
-    {      
-      estacion: 'verano'
-    },
-    {      
-      estacion: 'otoño'
-    },
-    {      
-      estacion: 'invierno'
-    },
-    {      
-      estacion: 'primavera'
-    }
-  ];
-  
+module.exports = [ 
+  {
+   email: 'ejemplo@gmail.com',
+   password: '123456' 
+  }
+];
