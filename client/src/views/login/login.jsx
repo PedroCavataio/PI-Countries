@@ -62,7 +62,7 @@ const Login = ({ onLogin, access }) => {
       </div>
        <div className="contenedor">
           <div className="login-group">
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email:  (<span style={{ color: 'green' }}>ejemplo@gmail.com</span>)</label>
             <input
               type="email"
               id="email"
@@ -76,7 +76,8 @@ const Login = ({ onLogin, access }) => {
             {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
             <div className="login-group">
-              <label htmlFor="password">Password:</label>
+              {/* <label htmlFor="password">Password: (123456)</label> */}
+              <label htmlFor="password">Password: (<span style={{ color: 'green' }}>123456</span>)</label>
               <input
                 type="password"
                 id="password"
