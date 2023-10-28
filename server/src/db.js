@@ -35,6 +35,5 @@ const {Country, Activity} = sequelize.models;
 Country.belongsToMany(Activity, { through: "CountryActivity" });
 Activity.belongsToMany(Country, { through: "CountryActivity" });
 
-module.exports = {sequelize, ...sequelize.models, Op };  //models exporta una func q define el modelo
-  
+module.exports = {sequelize, ...sequelize.models, Op };  
 

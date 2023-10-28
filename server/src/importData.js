@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { Country } = require('./db'); // Importa el modelo del país de tu base de datos
+const { Country } = require('./db'); // Importa el modelo del país de la base de datos
 
 const fetchAndSaveCountries = async () => {
   try {
@@ -19,8 +19,7 @@ const fetchAndSaveCountries = async () => {
     })
     
     const savedCountries = await Country.bulkCreate(countriesMapeados);  // Guarda los países en la base de datos
-      //res.status(200).send('Países guardados correctamente en la base de datos.');
-    
+      
   } catch (error) {
     console.error('Error en fetchAndSaveCountries-->', error);
 

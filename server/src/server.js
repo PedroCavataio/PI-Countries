@@ -11,9 +11,9 @@ server.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods','GET, POST, OPTIONS, PUT, DELETE');next();});
 server.use(morgan("dev"));
-server.use(express.json());   //funcion de parseo
+server.use(express.json());   
 server.use(cors());
 server.use("/", router);
-server.use(router);  //CONFIGURAMOS NUESTRO ROUTER PRINCIPAL.  punto de entrada al localhost => /routes/index  
+server.use(router);  
 
 module.exports = server;
