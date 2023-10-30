@@ -3,7 +3,7 @@ const server = require("./src/server");
 const PORT = process.env.PORT || 3001;
 const { sequelize } = require ("./src/db.js");
 const { Country } = require("./src/models/Country");
-const fetchAndSaveCountries = require('./src/importData'); // Importa la función para obtener y guardar los países
+const fetchAndSaveCountries = require('./src/importData'); 
 
 
 server.listen(PORT, async () => {

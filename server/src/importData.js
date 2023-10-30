@@ -1,6 +1,5 @@
 const axios = require('axios');
-const { Country } = require('./db'); // Importa el modelo del país de la base de datos
-
+const { Country } = require('./db'); 
 const fetchAndSaveCountries = async () => {
   try {
     const response = await axios.get('http://localhost:5000/countries'); // Realiza la petición a la API - Reemplaza "http://api.example.com/countries" con la URL de la API real
@@ -18,7 +17,7 @@ const fetchAndSaveCountries = async () => {
     return countryMapeado;
     })
     
-    const savedCountries = await Country.bulkCreate(countriesMapeados);  // Guarda los países en la base de datos
+    const savedCountries = await Country.bulkCreate(countriesMapeados);  
       
   } catch (error) {
     console.error('Error en fetchAndSaveCountries-->', error);
