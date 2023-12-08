@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/PI-Countries/static/css/main.34fa5a26.css",
+    "main.js": "/PI-Countries/static/js/main.31c44007.js",
+    "static/js/47.5a951665.chunk.js": "/PI-Countries/static/js/47.5a951665.chunk.js",
+    "static/media/LandingyHome.jpg": "/PI-Countries/static/media/LandingyHome.a14492c3942e126d8748.jpg",
+    "static/media/activitiesFondoDelfi.jpg": "/PI-Countries/static/media/activitiesFondoDelfi.6494116660db559913c0.jpg",
+    "static/media/details.jpg": "/PI-Countries/static/media/details.d06b4ef18f5b93fa2ff5.jpg",
+    "static/media/login.jpg": "/PI-Countries/static/media/login.d8fde8e6f88a82f41efe.jpg",
+    "static/media/fotoPedro.jpg": "/PI-Countries/static/media/fotoPedro.9bf7ce958055286234fb.jpg",
+    "static/media/mundoLogin.avif": "/PI-Countries/static/media/mundoLogin.f971f8982fd8d6927429.avif",
+    "index.html": "/PI-Countries/index.html",
+    "main.34fa5a26.css.map": "/PI-Countries/static/css/main.34fa5a26.css.map",
+    "main.31c44007.js.map": "/PI-Countries/static/js/main.31c44007.js.map",
+    "47.5a951665.chunk.js.map": "/PI-Countries/static/js/47.5a951665.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.34fa5a26.css",
+    "static/js/main.31c44007.js"
+  ]
+}
