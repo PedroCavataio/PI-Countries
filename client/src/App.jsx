@@ -35,7 +35,7 @@ function App() {
       {window.location.pathname == "/home" && <NavBar className="styles-nav" />}
 
       <Routes>
-        <Route path="/" element={<Login onLogin={login} access={access} />} />
+        <Route path="/PI-Countries" element={<Login onLogin={login} access={access} />} />
         <Route path="/landing" element={<Landing />} />
         <Route path="/home" element={<Home />} />
         <Route path="/home/:id" element={<CountryDetails />} />
